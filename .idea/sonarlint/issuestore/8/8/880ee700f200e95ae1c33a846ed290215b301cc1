@@ -1,0 +1,9 @@
+
+T
+java:S1948"2Make "reservationQuery" transient or serializable.(άήΪ¦ÿÿÿÿÿ8θην¤υ1
+M
+java:S1948"+Make "roomQuery" transient or serializable.(¦Ψ†ϊÿÿÿÿ8θην¤υ1
+D
+java:S1948""Make "rooms" private or transient.(Λ¥ϊÿÿÿÿ8θην¤υ1
+\
+java:S1612G":Replace this lambda with method reference 'Room::getName'.(δΨ΅Πωÿÿÿÿ8φην¤υ1

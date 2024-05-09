@@ -1,0 +1,7 @@
+
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Şİ¸†ğ1
+H
+java:S1948"+Make "userQuery" transient or serializable.(Ä·ØÌ8ßİ¸†ğ1
+^
+java:S1612$"<Replace this lambda with method reference 'this::loginUser'.(öñÁ’úÿÿÿÿ8ß²¯‰ğ1

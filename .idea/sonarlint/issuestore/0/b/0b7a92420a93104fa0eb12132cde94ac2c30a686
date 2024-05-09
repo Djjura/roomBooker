@@ -1,0 +1,19 @@
+
+_
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄÞ8¾‹¿¤õ1
+_
+java:S6813$"BRemove this field injection and use constructor injection instead.(êæÄÞ8¾‹¿¤õ1
+s
+java:S1450"VRemove the "toolbar" field and declare it as a local variable in the relevant methods.(¡ˆ‘Ø8¿‹¿¤õ1
+T
+java:S1948#"2Make "reservationQuery" transient or serializable.(ˆåý¿üÿÿÿÿ8¿‹¿¤õ1
+H
+java:S1948%"+Make "roomQuery" transient or serializable.(‰ˆ¢—8¿‹¿¤õ1
+P
+java:S1611D"3Remove the parentheses around the "event" parameter(ÖËöˆ8Æ‹¿¤õ1
+X	java:S125E"<This block of commented-out lines of code should be removed.(ÛÉÚë8Ç‹¿¤õ1
+]	java:S125G"<This block of commented-out lines of code should be removed.(ÆœÏ–þÿÿÿÿ8Ç‹¿¤õ1
+P
+java:S1611T"3Remove the parentheses around the "event" parameter(ëð†æ8Ë‹¿¤õ1
+U
+java:S1068"3Remove this unused "reservationForm" private field.(ÿãÛÍþÿÿÿÿ8Ñ‹¿¤õ1

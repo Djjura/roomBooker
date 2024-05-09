@@ -1,0 +1,7 @@
+
+
+java:S1488&"]Immediately return this expression instead of assigning it to the temporary variable "rooms".(ŸÚ½øÿÿÿÿ8»á©µè1
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¢”·Òüÿÿÿÿ8’ûåÿê1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Êá©µè1

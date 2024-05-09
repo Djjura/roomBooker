@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="AdditionalModuleElements">
+    <content url="file://$MODULE_DIR$" />
+  </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="f709898f-14b0-4a49-acee-a6b2e338eb80" />
+  </component>
+  <component name="designer2.settings">
+    <option name="lastJavaLocation" value="C:\Users\Stefan\Desktop\RoomBooker\RoomBooker\src\main\java" />
+    <option name="lastJavaPackage" value="elfak.diplomski.RoomBooker.gui.room" />
+    <option name="lastTemplateLocation" value="C:\Users\Stefan\Desktop\RoomBooker\src\main\webapp\frontend" />
+    <option name="serverIp" value="192.168.100.7" />
+    <option name="serverPort" value="65336" />
+  </component>
+</module>
