@@ -33,7 +33,6 @@ public class Test {
     private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
     private static final List<String> SCOPES = Collections.singletonList(CalendarScopes.CALENDAR);
 
-    @EventListener(ApplicationReadyEvent.class)
     public static Credential getCredentials(/*final NetHttpTransport HTTP_TRANSPORT*/) throws IOException, GeneralSecurityException {
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         // Load client secrets.
@@ -55,5 +54,23 @@ public class Test {
         Credential credential = new AuthorizationCodeInstalledApp(flow, receiver).authorize("djurke98@gmail.com");
         //returns an authorized Credential object.
         return credential;
+    }
+
+    /** Authorizes the installed application to access user's protected data. */
+    @EventListener(ApplicationReadyEvent.class)
+
+    private static Credential authorize() throws Exception {
+        final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+        // load client secrets
+        InputStream in =new FileInputStream("C:\\Users\\Stefan\\Desktop\\RoomBooker\\RoomBooker\\src\\main\\resources\\zaLocalhostSecret.json");
+        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
+                new InputStreamReader(in));
+        // set up authorization code flow
+        GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
+                HTTP_TRANSPORT, JSON_FACTORY, clientSecrets,
+                Collections.singleton(CalendarScopes.CALENDAR)).setDataStoreFactory(new FileDataStoreFactory(new java.io.File("tokens")))
+                .build();
+        // authorize
+        return new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver.Builder().setCallbackPath("/auth/pls").setPort(8081).build()).authorize("user");
     }
 }

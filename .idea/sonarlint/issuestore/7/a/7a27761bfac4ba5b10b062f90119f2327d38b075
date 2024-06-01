@@ -1,0 +1,28 @@
+
+L
+java:S3740C"/Provide the parametrized type for this generic.(³€øı8¦°ãıü1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8©°ãıü1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8©°ãıü1
+r
+java:S1854C"URemove this useless assignment to local variable "externalCalendarRequestHttpEntity".(³€øı8¯°ãıü1
+Z
+java:S1854="8Remove this useless assignment to local variable "user".(ÁûÜıÿÿÿÿ8°°ãıü1
+T
+java:S1854 "7Remove this useless assignment to local variable "url".(Õ‰º¯8±°ãıü1
+E
+java:S1481 "(Remove this unused "url" local variable.(Õ‰º¯8¾°ãıü1
+]	java:S125'"<This block of commented-out lines of code should be removed.(úö•¯úÿÿÿÿ8ø¹Ö€ı1
+]	java:S1251"<This block of commented-out lines of code should be removed.(¢ÚÅ¼ÿÿÿÿÿ8Í£Ø€ı1
+K
+java:S1481=")Remove this unused "user" local variable.(ÁûÜıÿÿÿÿ8Ç°ãıü1
+c
+java:S1481C"FRemove this unused "externalCalendarRequestHttpEntity" local variable.(³€øı8É°ãıü1
+L	java:S106H"+Replace this use of System.out by a logger.(¼ªâ¶üÿÿÿÿ8Ê°ãıü1
+v
+java:S1128	"YRemove this unused import 'org.springframework.boot.context.event.ApplicationReadyEvent'.(Ğ‰“8ÿ“ß”ı1
+n
+java:S1128
+"LRemove this unused import 'org.springframework.context.event.EventListener'.(¦ñÛĞüÿÿÿÿ8€”ß”ı1
+€secrets:S6691*"[Make sure this Google OAuth client secret gets revoked, changed, and removed from the code.(éĞîÄıÿÿÿÿ8è‚÷şü1
