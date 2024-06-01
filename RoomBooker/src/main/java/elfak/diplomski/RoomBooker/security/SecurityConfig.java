@@ -28,8 +28,8 @@ public class SecurityConfig extends VaadinWebSecurity {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(auth ->
-                auth.requestMatchers(AntPathRequestMatcher
-                        .antMatcher(HttpMethod.GET, "/images/*.png")).permitAll())
+                        auth.requestMatchers(AntPathRequestMatcher
+                                .antMatcher(HttpMethod.GET, "/images/*.png")).permitAll())
                 .formLogin(form -> form.defaultSuccessUrl("/", true));
         super.configure(http);
         setLoginView(http, LoginView.class);
@@ -40,7 +40,7 @@ public class SecurityConfig extends VaadinWebSecurity {
         List<database.tables.pojos.User> users = userQuery.getUsers();
         List<UserDetails> usersDetails = new ArrayList<>();
         users.forEach(user -> {
-            usersDetails.add(User.builder().username(user.getName()).password("{noop}" + user.getPassword()).roles("USER").build());
+            usersDetails.add(User.builder().username(user.getName()).password("{noop}" + user.getPassword()).roles("USER", "ADMIN").build());
         });
 //        UserDetails user = User.builder().username("Djura").password("{noop}123").roles("USER").build();
         return new InMemoryUserDetailsManager(usersDetails);

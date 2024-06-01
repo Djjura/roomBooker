@@ -18,4 +18,7 @@ public interface IReservationQuery {
     public List<ReservationsWithAdditionalInfo> getReservationsWithExternalData();
 
     public List<Reservations> getRoomReservations(String uuid);
+    ReservationsWithAdditionalInfo getReservationWithExternalData(String uuid);
+
+    void deleteReservation(String uuid);
 }

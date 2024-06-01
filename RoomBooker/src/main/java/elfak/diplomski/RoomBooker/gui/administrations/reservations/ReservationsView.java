@@ -91,7 +91,7 @@ public class ReservationsView extends VerticalLayout {
 
     private void configureGird() {
         grid.setSizeFull();
-        grid.setColumns("name", "userName", "type", "status", "startTime", "duration", "specialRequest", "roomName");
+        grid.setColumns("name", "userName", "type", "status", "startTime", "endTime", "specialRequest", "roomName");
         refreshReservations();
 
         grid.asSingleSelect().addValueChangeListener(event ->

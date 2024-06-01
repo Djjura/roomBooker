@@ -8,6 +8,8 @@ import database.Diplomski;
 import database.Keys;
 import database.tables.records.UserRecord;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 
 import org.jooq.Field;
@@ -120,6 +122,11 @@ public class User extends TableImpl<UserRecord> {
     @Override
     public UniqueKey<UserRecord> getPrimaryKey() {
         return Keys.KEY_USER_PRIMARY;
+    }
+
+    @Override
+    public List<UniqueKey<UserRecord>> getUniqueKeys() {
+        return Arrays.asList(Keys.KEY_USER_NAME_UNIQUE, Keys.KEY_USER_EMAIL_UNIQUE);
     }
 
     @Override

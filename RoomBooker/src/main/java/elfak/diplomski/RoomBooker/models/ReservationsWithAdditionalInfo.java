@@ -10,7 +10,7 @@ public class ReservationsWithAdditionalInfo implements Serializable {
     private String userUuid;
     private String name;
     private LocalDateTime startTime;
-    private Integer duration;
+    private LocalDateTime endTime;
     private String type;
     private String status;
     private String specialRequest;
@@ -59,12 +59,12 @@ public class ReservationsWithAdditionalInfo implements Serializable {
         this.startTime = startTime;
     }
 
-    public Integer getDuration() {
-        return duration;
+    public LocalDateTime getEndTime() {
+        return endTime;
     }
 
-    public void setDuration(Integer duration) {
-        this.duration = duration;
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
     }
 
     public String getType() {

@@ -30,7 +30,10 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     public static final UniqueKey<ReservationsRecord> KEY_RESERVATIONS_PRIMARY = Internal.createUniqueKey(Reservations.RESERVATIONS, DSL.name("KEY_reservations_PRIMARY"), new TableField[] { Reservations.RESERVATIONS.UUID }, true);
+    public static final UniqueKey<RoomRecord> KEY_ROOM_NAME_UNIQUE = Internal.createUniqueKey(Room.ROOM, DSL.name("KEY_room_NAME_UNIQUE"), new TableField[] { Room.ROOM.NAME }, true);
     public static final UniqueKey<RoomRecord> KEY_ROOM_PRIMARY = Internal.createUniqueKey(Room.ROOM, DSL.name("KEY_room_PRIMARY"), new TableField[] { Room.ROOM.UUID }, true);
+    public static final UniqueKey<UserRecord> KEY_USER_EMAIL_UNIQUE = Internal.createUniqueKey(User.USER, DSL.name("KEY_user_email_UNIQUE"), new TableField[] { User.USER.EMAIL }, true);
+    public static final UniqueKey<UserRecord> KEY_USER_NAME_UNIQUE = Internal.createUniqueKey(User.USER, DSL.name("KEY_user_name_UNIQUE"), new TableField[] { User.USER.NAME }, true);
     public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = Internal.createUniqueKey(User.USER, DSL.name("KEY_user_PRIMARY"), new TableField[] { User.USER.UUID }, true);
 
     // -------------------------------------------------------------------------

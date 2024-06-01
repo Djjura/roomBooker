@@ -14,4 +14,6 @@ public interface IUserQuery {
     void updateUser(User user);
 
     User loginUser(String username, String password);
+
+    User getUserByUsername(String username);
 }

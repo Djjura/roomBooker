@@ -1,9 +1,16 @@
 
-T
-java:S1948"2Make "reservationQuery" transient or serializable.(ÜŞÚ¦ÿÿÿÿÿ8èçí¤õ1
 M
-java:S1948"+Make "roomQuery" transient or serializable.(¦Ø†úÿÿÿÿ8èçí¤õ1
+java:S1948"+Make "roomQuery" transient or serializable.(¦Ø†úÿÿÿÿ8¨å÷1
 D
-java:S1948""Make "rooms" private or transient.(ŸË¥Ÿúÿÿÿÿ8èçí¤õ1
+java:S1948""Make "rooms" private or transient.(ŸË¥Ÿúÿÿÿÿ8©å÷1
+]	java:S125'"<This block of commented-out lines of code should be removed.(§î¡õüÿÿÿÿ8°å÷1
+C
+java:S30104"!Remove this assignment of "edit".(å¶ÿÿÿÿÿ8²å÷1
+C
+java:S3010="!Remove this assignment of "edit".(ô˜Ã¸ÿÿÿÿÿ8³å÷1
 \
-java:S1612G":Replace this lambda with method reference 'Room::getName'.(äØ¡Ğùÿÿÿÿ8öçí¤õ1
+java:S1612T":Replace this lambda with method reference 'Room::getName'.(äØ¡Ğùÿÿÿÿ8¸å÷1
+d
+java:S1126]"BReplace this if-then-else statement by a single method invocation.(ß˜ùÓşÿÿÿÿ8¹å÷1
+\
+java:S1612d":Replace this lambda with method reference 'Room::getName'.(äØ¡Ğùÿÿÿÿ8»å÷1

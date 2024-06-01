@@ -24,7 +24,7 @@ public class UserQuery implements IUserQuery {
     @Override
     @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
     public User getUserByUuid(String uuid) {
-        return dsl.selectFrom(USER).fetchOneInto(User.class);
+        return dsl.selectFrom(USER).where(USER.UUID.eq(uuid)).fetchOneInto(User.class);
     }
 
     @Override
@@ -57,5 +57,11 @@ public class UserQuery implements IUserQuery {
                 .where(USER.NAME.eq(username))
                 .and(USER.PASSWORD.eq(password))
                 .fetchOneInto(User.class);
+    }
+
+    @Override
+    @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
+    public User getUserByUsername(String username) {
+        return dsl.selectFrom(USER).where(USER.NAME.eq(username)).fetchOneInto(User.class);
     }
 }

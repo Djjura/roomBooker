@@ -80,11 +80,6 @@ public class Reservations extends TableImpl<ReservationsRecord> {
     public final TableField<ReservationsRecord, LocalDateTime> START_TIME = createField(DSL.name("start_time"), SQLDataType.LOCALDATETIME(0).nullable(false), this, "");
 
     /**
-     * The column <code>diplomski.reservations.duration</code>.
-     */
-    public final TableField<ReservationsRecord, Integer> DURATION = createField(DSL.name("duration"), SQLDataType.INTEGER.nullable(false), this, "");
-
-    /**
      * The column <code>diplomski.reservations.type</code>.
      */
     public final TableField<ReservationsRecord, String> TYPE = createField(DSL.name("type"), SQLDataType.VARCHAR(45).nullable(false), this, "");
@@ -98,6 +93,11 @@ public class Reservations extends TableImpl<ReservationsRecord> {
      * The column <code>diplomski.reservations.special_request</code>.
      */
     public final TableField<ReservationsRecord, String> SPECIAL_REQUEST = createField(DSL.name("special_request"), SQLDataType.VARCHAR(45), this, "");
+
+    /**
+     * The column <code>diplomski.reservations.end_time</code>.
+     */
+    public final TableField<ReservationsRecord, LocalDateTime> END_TIME = createField(DSL.name("end_time"), SQLDataType.LOCALDATETIME(0).nullable(false).defaultValue(DSL.field(DSL.raw("CURRENT_TIMESTAMP"), SQLDataType.LOCALDATETIME)), this, "");
 
     private Reservations(Name alias, Table<ReservationsRecord> aliased) {
         this(alias, aliased, null);
@@ -219,14 +219,14 @@ public class Reservations extends TableImpl<ReservationsRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Row9<String, String, String, String, LocalDateTime, Integer, String, String, String> fieldsRow() {
+    public Row9<String, String, String, String, LocalDateTime, String, String, String, LocalDateTime> fieldsRow() {
         return (Row9) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function9<? super String, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super Integer, ? super String, ? super String, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function9<? super String, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super LocalDateTime, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -234,7 +234,7 @@ public class Reservations extends TableImpl<ReservationsRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function9<? super String, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super Integer, ? super String, ? super String, ? super String, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function9<? super String, ? super String, ? super String, ? super String, ? super LocalDateTime, ? super String, ? super String, ? super String, ? super LocalDateTime, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }

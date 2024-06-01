@@ -65,6 +65,9 @@ public class ReservationQuery implements IReservationQuery {
 
         reservation.setUserUuid(userUuid);
         reservation.setRoomUuid(roomUuid);
+        if (reservation.getStartTime().isAfter(reservation.getEndTime())) {
+            throw new IllegalArgumentException("Reservation end time is before reservation start time" + reservation.getStartTime() + ">" + reservation.getEndTime());
+        }
         ReservationsRecord reservationsRecord = dsl.newRecord(RESERVATIONS, reservation);
         dsl.insertInto(RESERVATIONS).set(reservationsRecord).execute();
 
@@ -95,6 +98,7 @@ public class ReservationQuery implements IReservationQuery {
         dsl.update(RESERVATIONS).set(reservationsRecord).execute();
     }
 
+    @Override
     @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
     public List<ReservationsWithAdditionalInfo> getReservationsWithExternalData() {
         SelectField<?>[] fields = RESERVATIONS.fields();
@@ -110,5 +114,23 @@ public class ReservationQuery implements IReservationQuery {
     @Transactional(readOnly = false, propagation = Propagation.REQUIRED)
     public List<Reservations> getRoomReservations(String uuid) {
         return dsl.selectFrom(RESERVATIONS).where(RESERVATIONS.ROOM_UUID.eq(uuid)).fetchInto(Reservations.class);
+    }
+
+    @Override
+    @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
+    public ReservationsWithAdditionalInfo getReservationWithExternalData(String uuid) {
+        SelectField<?>[] fields = RESERVATIONS.fields();
+        return dsl.select(fields).select(ROOM.NAME.as("roomName"), USER.NAME.as("userName"))
+                .from(RESERVATIONS)
+                .join(ROOM).on(RESERVATIONS.ROOM_UUID.eq(ROOM.UUID))
+                .join(USER).on(RESERVATIONS.USER_UUID.eq(USER.UUID))
+                .where(RESERVATIONS.UUID.eq(uuid))
+                .fetchOneInto(ReservationsWithAdditionalInfo.class);
+    }
+
+    @Override
+    @Transactional(readOnly = false, propagation = Propagation.REQUIRED)
+    public void deleteReservation(String uuid) {
+        dsl.delete(RESERVATIONS).where(RESERVATIONS.UUID.eq(uuid)).execute();
     }
 }

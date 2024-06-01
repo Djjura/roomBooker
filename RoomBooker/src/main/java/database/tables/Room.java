@@ -8,6 +8,8 @@ import database.Diplomski;
 import database.Keys;
 import database.tables.records.RoomRecord;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 
 import org.jooq.Field;
@@ -115,6 +117,11 @@ public class Room extends TableImpl<RoomRecord> {
     @Override
     public UniqueKey<RoomRecord> getPrimaryKey() {
         return Keys.KEY_ROOM_PRIMARY;
+    }
+
+    @Override
+    public List<UniqueKey<RoomRecord>> getUniqueKeys() {
+        return Arrays.asList(Keys.KEY_ROOM_NAME_UNIQUE);
     }
 
     @Override

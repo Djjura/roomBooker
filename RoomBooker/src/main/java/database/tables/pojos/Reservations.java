@@ -21,10 +21,10 @@ public class Reservations implements Serializable {
     private String userUuid;
     private String name;
     private LocalDateTime startTime;
-    private Integer duration;
     private String type;
     private String status;
     private String specialRequest;
+    private LocalDateTime endTime;
 
     public Reservations() {}
 
@@ -34,10 +34,10 @@ public class Reservations implements Serializable {
         this.userUuid = value.userUuid;
         this.name = value.name;
         this.startTime = value.startTime;
-        this.duration = value.duration;
         this.type = value.type;
         this.status = value.status;
         this.specialRequest = value.specialRequest;
+        this.endTime = value.endTime;
     }
 
     public Reservations(
@@ -46,20 +46,20 @@ public class Reservations implements Serializable {
         String userUuid,
         String name,
         LocalDateTime startTime,
-        Integer duration,
         String type,
         String status,
-        String specialRequest
+        String specialRequest,
+        LocalDateTime endTime
     ) {
         this.uuid = uuid;
         this.roomUuid = roomUuid;
         this.userUuid = userUuid;
         this.name = name;
         this.startTime = startTime;
-        this.duration = duration;
         this.type = type;
         this.status = status;
         this.specialRequest = specialRequest;
+        this.endTime = endTime;
     }
 
     /**
@@ -138,21 +138,6 @@ public class Reservations implements Serializable {
     }
 
     /**
-     * Getter for <code>diplomski.reservations.duration</code>.
-     */
-    public Integer getDuration() {
-        return this.duration;
-    }
-
-    /**
-     * Setter for <code>diplomski.reservations.duration</code>.
-     */
-    public Reservations setDuration(Integer duration) {
-        this.duration = duration;
-        return this;
-    }
-
-    /**
      * Getter for <code>diplomski.reservations.type</code>.
      */
     public String getType() {
@@ -197,6 +182,21 @@ public class Reservations implements Serializable {
         return this;
     }
 
+    /**
+     * Getter for <code>diplomski.reservations.end_time</code>.
+     */
+    public LocalDateTime getEndTime() {
+        return this.endTime;
+    }
+
+    /**
+     * Setter for <code>diplomski.reservations.end_time</code>.
+     */
+    public Reservations setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -236,12 +236,6 @@ public class Reservations implements Serializable {
         }
         else if (!this.startTime.equals(other.startTime))
             return false;
-        if (this.duration == null) {
-            if (other.duration != null)
-                return false;
-        }
-        else if (!this.duration.equals(other.duration))
-            return false;
         if (this.type == null) {
             if (other.type != null)
                 return false;
@@ -260,6 +254,12 @@ public class Reservations implements Serializable {
         }
         else if (!this.specialRequest.equals(other.specialRequest))
             return false;
+        if (this.endTime == null) {
+            if (other.endTime != null)
+                return false;
+        }
+        else if (!this.endTime.equals(other.endTime))
+            return false;
         return true;
     }
 
@@ -272,10 +272,10 @@ public class Reservations implements Serializable {
         result = prime * result + ((this.userUuid == null) ? 0 : this.userUuid.hashCode());
         result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
         result = prime * result + ((this.startTime == null) ? 0 : this.startTime.hashCode());
-        result = prime * result + ((this.duration == null) ? 0 : this.duration.hashCode());
         result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
         result = prime * result + ((this.status == null) ? 0 : this.status.hashCode());
         result = prime * result + ((this.specialRequest == null) ? 0 : this.specialRequest.hashCode());
+        result = prime * result + ((this.endTime == null) ? 0 : this.endTime.hashCode());
         return result;
     }
 
@@ -288,10 +288,10 @@ public class Reservations implements Serializable {
         sb.append(", ").append(userUuid);
         sb.append(", ").append(name);
         sb.append(", ").append(startTime);
-        sb.append(", ").append(duration);
         sb.append(", ").append(type);
         sb.append(", ").append(status);
         sb.append(", ").append(specialRequest);
+        sb.append(", ").append(endTime);
 
         sb.append(")");
         return sb.toString();

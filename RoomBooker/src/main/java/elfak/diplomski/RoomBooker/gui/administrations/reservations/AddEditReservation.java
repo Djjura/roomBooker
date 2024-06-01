@@ -8,10 +8,10 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
+import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.timepicker.TimePicker;
 import com.vaadin.flow.shared.Registration;
@@ -34,7 +34,7 @@ public class AddEditReservation extends FormLayout {
     TextField roomName = new TextField("Room Name");
     DatePicker startDay = new DatePicker("Start day");
     TimePicker startTime = new TimePicker("Start time");
-    NumberField duration = new NumberField("Duration in minutes");
+    DateTimePicker endTime = new DateTimePicker("End time");
     ComboBox<ReservationTypeEnum> type = new ComboBox<>("Type");
 
     ComboBox<ReservationStatusEnum> status = new ComboBox<>("Status");
@@ -56,12 +56,12 @@ public class AddEditReservation extends FormLayout {
 
         setFieldRequirement(true);
         setDateFormat();
-        return new VerticalLayout(name, userName, roomName, type, startDay, startTime, duration, status, specialRequest);
+        return new VerticalLayout(name, userName, roomName, type, startDay, startTime, endTime, status, specialRequest);
     }
 
     private void setFieldRequirement(boolean isFieldRequired) {
         name.setRequired(isFieldRequired);
-        duration.setRequired(isFieldRequired);
+        endTime.setRequiredIndicatorVisible(isFieldRequired);
         type.setRequired(isFieldRequired);
         status.setRequired(isFieldRequired);
         userName.setRequired(isFieldRequired);
@@ -103,7 +103,6 @@ public class AddEditReservation extends FormLayout {
         type.setValue(ReservationTypeEnum.fromValue(Integer.valueOf(reservation.getType())));
         this.startDay.setValue(LocalDate.from(reservation.getStartTime()));
         this.startTime.setValue(LocalTime.from(reservation.getStartTime()));
-        duration.setValue(reservation.getDuration().doubleValue());
         status.setValue(ReservationStatusEnum.fromValue(Integer.valueOf(reservation.getStatus())));
         specialRequest.setValue(reservation.getSpecialRequest());
     }
@@ -115,7 +114,7 @@ public class AddEditReservation extends FormLayout {
         type.clear();
         startDay.clear();
         startTime.clear();
-        duration.clear();
+        endTime.clear();
         status.clear();
         specialRequest.clear();
     }
@@ -125,9 +124,9 @@ public class AddEditReservation extends FormLayout {
         ReservationsWithAdditionalInfo reservations = new ReservationsWithAdditionalInfo();
         reservations.setName(name.getValue());
         reservations.setType(String.valueOf(type.getValue().getType()));
-        reservations.setDuration(duration.getValue().intValue());
         reservations.setStatus(String.valueOf(status.getValue().getStatus()));
         reservations.setStartTime(LocalDateTime.of(startDay.getValue(), startTime.getValue()));
+        reservations.setEndTime(endTime.getValue());
         reservations.setSpecialRequest(specialRequest.getValue());
         reservations.setRoomName(roomName.getValue());
         reservations.setUserName(userName.getValue());

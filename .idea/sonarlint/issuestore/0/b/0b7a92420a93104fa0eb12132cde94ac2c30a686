@@ -1,19 +1,35 @@
 
+d
+java:S1192U"GDefine a constant instead of duplicating this literal "Cancel" 3 times.(¬´Ÿ8ˆ±—÷1
 _
-java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞ8¾‹¿¤õ1
+java:S6813("BRemove this field injection and use constructor injection instead.(êæÄŞ8øÔ¶œ÷1
 _
-java:S6813$"BRemove this field injection and use constructor injection instead.(êæÄŞ8¾‹¿¤õ1
+java:S6813*"BRemove this field injection and use constructor injection instead.(êæÄŞ8øÔ¶œ÷1
+_
+java:S6813,"BRemove this field injection and use constructor injection instead.(êæÄŞ8ùÔ¶œ÷1
 s
-java:S1450"VRemove the "toolbar" field and declare it as a local variable in the relevant methods.(¡ˆ‘Ø8¿‹¿¤õ1
+java:S1450#"VRemove the "toolbar" field and declare it as a local variable in the relevant methods.(¡ˆ‘Ø8üÔ¶œ÷1
+S
+java:S1948!"1Make "securityService" transient or serializable.(ˆ°ÛÊüÿÿÿÿ8ıÔ¶œ÷1
 T
-java:S1948#"2Make "reservationQuery" transient or serializable.(ˆåı¿üÿÿÿÿ8¿‹¿¤õ1
+java:S1948)"2Make "reservationQuery" transient or serializable.(ˆåı¿üÿÿÿÿ8şÔ¶œ÷1
 H
-java:S1948%"+Make "roomQuery" transient or serializable.(‰ˆ¢—8¿‹¿¤õ1
+java:S1948+"+Make "roomQuery" transient or serializable.(‰ˆ¢—8şÔ¶œ÷1
+M
+java:S1948-"+Make "userQuery" transient or serializable.(ÍÁ¦ÿÿÿÿÿ8şÔ¶œ÷1
+F
+java:S1948/"*Make "timezone" transient or serializable.(İˆØF8şÔ¶œ÷1
 P
-java:S1611D"3Remove the parentheses around the "event" parameter(ÖËöˆ8Æ‹¿¤õ1
-X	java:S125E"<This block of commented-out lines of code should be removed.(ÛÉÚë8Ç‹¿¤õ1
-]	java:S125G"<This block of commented-out lines of code should be removed.(ÆœÏ–şÿÿÿÿ8Ç‹¿¤õ1
+java:S1611P"3Remove the parentheses around the "event" parameter(ÖËöˆ8Õ¶œ÷1
 P
-java:S1611T"3Remove the parentheses around the "event" parameter(ëğ†æ8Ë‹¿¤õ1
+java:S1611^"3Remove the parentheses around the "event" parameter(ëğ†æ8Õ¶œ÷1
+O
+java:S1481_"-Remove this unused "userRole" local variable.(¹ÂÏ½şÿÿÿÿ8ŸÕ¶œ÷1
+S
+java:S1481e"1Remove this unused "deleteButton" local variable.(˜¥ ·şÿÿÿÿ8£Õ¶œ÷1
 U
-java:S1068"3Remove this unused "reservationForm" private field.(ÿãÛÍşÿÿÿÿ8Ñ‹¿¤õ1
+java:S1068!"3Remove this unused "securityService" private field.(ˆ°ÛÊüÿÿÿÿ8¶Õ¶œ÷1
+U
+java:S1068$"3Remove this unused "reservationForm" private field.(ÿãÛÍşÿÿÿÿ8·Õ¶œ÷1
+H
+java:S1068/",Remove this unused "timezone" private field.(İˆØF8·Õ¶œ÷1

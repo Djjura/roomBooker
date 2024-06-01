@@ -18,8 +18,8 @@ public class ReservationsWithAdditionalInfoMapper {
         rwai.setName(record.get(RESERVATIONS.NAME));
         rwai.setStatus(record.get(RESERVATIONS.STATUS));
         rwai.setStartTime(record.get(RESERVATIONS.START_TIME));
+        rwai.setEndTime(record.get(RESERVATIONS.END_TIME));
         rwai.setType(record.get(RESERVATIONS.TYPE));
-        rwai.setDuration(record.get(RESERVATIONS.DURATION));
         rwai.setRoomName(record.get(ROOM.NAME));
         rwai.setRoomUuid(record.get(RESERVATIONS.ROOM_UUID));
         rwai.setUserUuid(record.get(RESERVATIONS.USER_UUID));
