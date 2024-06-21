@@ -14,6 +14,9 @@ import elfak.diplomski.RoomBooker.gui.administrations.reservations.ReservationsV
 import elfak.diplomski.RoomBooker.gui.administrations.room.RoomView;
 import elfak.diplomski.RoomBooker.gui.administrations.user.UserView;
 import elfak.diplomski.RoomBooker.gui.calendarReservations.CalendarReservationsView;
+import elfak.diplomski.RoomBooker.gui.examSchedule.AddExamToTermView;
+import elfak.diplomski.RoomBooker.gui.examSchedule.CreateTermView;
+import elfak.diplomski.RoomBooker.gui.examSchedule.ExamScheduleView;
 import elfak.diplomski.RoomBooker.security.SecurityService;
 import jakarta.annotation.security.PermitAll;
 
@@ -54,6 +57,9 @@ public class MainView extends AppLayout {
                 , new RouterLink("Users", UserView.class)
                 , new RouterLink("Reservations", ReservationsView.class)
                 , new RouterLink("Create reservation", CalendarReservationsView.class)
+                , new RouterLink("Exam schedule", ExamScheduleView.class)
+                , new RouterLink("Create term", CreateTermView.class)
+                , new RouterLink("Add exams to term", AddExamToTermView.class)
         ));
     }
 }

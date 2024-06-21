@@ -4,8 +4,12 @@
 package database;
 
 
+import database.tables.Exam;
+import database.tables.ExamTerm;
+import database.tables.Proffesor;
 import database.tables.Reservations;
 import database.tables.Room;
+import database.tables.Term;
 import database.tables.User;
 
 import java.util.Arrays;
@@ -30,6 +34,21 @@ public class Diplomski extends SchemaImpl {
     public static final Diplomski DIPLOMSKI = new Diplomski();
 
     /**
+     * The table <code>diplomski.exam</code>.
+     */
+    public final Exam EXAM = Exam.EXAM;
+
+    /**
+     * The table <code>diplomski.exam_term</code>.
+     */
+    public final ExamTerm EXAM_TERM = ExamTerm.EXAM_TERM;
+
+    /**
+     * The table <code>diplomski.proffesor</code>.
+     */
+    public final Proffesor PROFFESOR = Proffesor.PROFFESOR;
+
+    /**
      * The table <code>diplomski.reservations</code>.
      */
     public final Reservations RESERVATIONS = Reservations.RESERVATIONS;
@@ -38,6 +57,11 @@ public class Diplomski extends SchemaImpl {
      * The table <code>diplomski.room</code>.
      */
     public final Room ROOM = Room.ROOM;
+
+    /**
+     * The table <code>diplomski.term</code>.
+     */
+    public final Term TERM = Term.TERM;
 
     /**
      * The table <code>diplomski.user</code>.
@@ -60,8 +84,12 @@ public class Diplomski extends SchemaImpl {
     @Override
     public final List<Table<?>> getTables() {
         return Arrays.asList(
+            Exam.EXAM,
+            ExamTerm.EXAM_TERM,
+            Proffesor.PROFFESOR,
             Reservations.RESERVATIONS,
             Room.ROOM,
+            Term.TERM,
             User.USER
         );
     }

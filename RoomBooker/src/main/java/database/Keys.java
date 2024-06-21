@@ -4,11 +4,19 @@
 package database;
 
 
+import database.tables.Exam;
+import database.tables.ExamTerm;
+import database.tables.Proffesor;
 import database.tables.Reservations;
 import database.tables.Room;
+import database.tables.Term;
 import database.tables.User;
+import database.tables.records.ExamRecord;
+import database.tables.records.ExamTermRecord;
+import database.tables.records.ProffesorRecord;
 import database.tables.records.ReservationsRecord;
 import database.tables.records.RoomRecord;
+import database.tables.records.TermRecord;
 import database.tables.records.UserRecord;
 
 import org.jooq.ForeignKey;
@@ -29,9 +37,14 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final UniqueKey<ExamRecord> KEY_EXAM_NAME_UNIQUE = Internal.createUniqueKey(Exam.EXAM, DSL.name("KEY_exam_name_UNIQUE"), new TableField[] { Exam.EXAM.NAME }, true);
+    public static final UniqueKey<ExamRecord> KEY_EXAM_PRIMARY = Internal.createUniqueKey(Exam.EXAM, DSL.name("KEY_exam_PRIMARY"), new TableField[] { Exam.EXAM.ID }, true);
+    public static final UniqueKey<ExamTermRecord> KEY_EXAM_TERM_PRIMARY = Internal.createUniqueKey(ExamTerm.EXAM_TERM, DSL.name("KEY_exam_term_PRIMARY"), new TableField[] { ExamTerm.EXAM_TERM.UUID }, true);
+    public static final UniqueKey<ProffesorRecord> KEY_PROFFESOR_PRIMARY = Internal.createUniqueKey(Proffesor.PROFFESOR, DSL.name("KEY_proffesor_PRIMARY"), new TableField[] { Proffesor.PROFFESOR.ID }, true);
     public static final UniqueKey<ReservationsRecord> KEY_RESERVATIONS_PRIMARY = Internal.createUniqueKey(Reservations.RESERVATIONS, DSL.name("KEY_reservations_PRIMARY"), new TableField[] { Reservations.RESERVATIONS.UUID }, true);
     public static final UniqueKey<RoomRecord> KEY_ROOM_NAME_UNIQUE = Internal.createUniqueKey(Room.ROOM, DSL.name("KEY_room_NAME_UNIQUE"), new TableField[] { Room.ROOM.NAME }, true);
     public static final UniqueKey<RoomRecord> KEY_ROOM_PRIMARY = Internal.createUniqueKey(Room.ROOM, DSL.name("KEY_room_PRIMARY"), new TableField[] { Room.ROOM.UUID }, true);
+    public static final UniqueKey<TermRecord> KEY_TERM_PRIMARY = Internal.createUniqueKey(Term.TERM, DSL.name("KEY_term_PRIMARY"), new TableField[] { Term.TERM.UUID }, true);
     public static final UniqueKey<UserRecord> KEY_USER_EMAIL_UNIQUE = Internal.createUniqueKey(User.USER, DSL.name("KEY_user_email_UNIQUE"), new TableField[] { User.USER.EMAIL }, true);
     public static final UniqueKey<UserRecord> KEY_USER_NAME_UNIQUE = Internal.createUniqueKey(User.USER, DSL.name("KEY_user_name_UNIQUE"), new TableField[] { User.USER.NAME }, true);
     public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = Internal.createUniqueKey(User.USER, DSL.name("KEY_user_PRIMARY"), new TableField[] { User.USER.UUID }, true);
@@ -40,6 +53,8 @@ public class Keys {
     // FOREIGN KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final ForeignKey<ExamTermRecord, ExamRecord> EXAM_FK = Internal.createForeignKey(ExamTerm.EXAM_TERM, DSL.name("exam_fk"), new TableField[] { ExamTerm.EXAM_TERM.EXAM_ID }, Keys.KEY_EXAM_PRIMARY, new TableField[] { Exam.EXAM.ID }, true);
+    public static final ForeignKey<ExamTermRecord, TermRecord> TERM_FK = Internal.createForeignKey(ExamTerm.EXAM_TERM, DSL.name("term_fk"), new TableField[] { ExamTerm.EXAM_TERM.TERM_ID }, Keys.KEY_TERM_PRIMARY, new TableField[] { Term.TERM.UUID }, true);
     public static final ForeignKey<ReservationsRecord, RoomRecord> ROOMFK = Internal.createForeignKey(Reservations.RESERVATIONS, DSL.name("roomfk"), new TableField[] { Reservations.RESERVATIONS.ROOM_UUID }, Keys.KEY_ROOM_PRIMARY, new TableField[] { Room.ROOM.UUID }, true);
     public static final ForeignKey<ReservationsRecord, UserRecord> USERFK = Internal.createForeignKey(Reservations.RESERVATIONS, DSL.name("userfk"), new TableField[] { Reservations.RESERVATIONS.USER_UUID }, Keys.KEY_USER_PRIMARY, new TableField[] { User.USER.UUID }, true);
 }

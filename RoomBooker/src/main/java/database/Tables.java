@@ -4,8 +4,12 @@
 package database;
 
 
+import database.tables.Exam;
+import database.tables.ExamTerm;
+import database.tables.Proffesor;
 import database.tables.Reservations;
 import database.tables.Room;
+import database.tables.Term;
 import database.tables.User;
 
 
@@ -16,6 +20,21 @@ import database.tables.User;
 public class Tables {
 
     /**
+     * The table <code>diplomski.exam</code>.
+     */
+    public static final Exam EXAM = Exam.EXAM;
+
+    /**
+     * The table <code>diplomski.exam_term</code>.
+     */
+    public static final ExamTerm EXAM_TERM = ExamTerm.EXAM_TERM;
+
+    /**
+     * The table <code>diplomski.proffesor</code>.
+     */
+    public static final Proffesor PROFFESOR = Proffesor.PROFFESOR;
+
+    /**
      * The table <code>diplomski.reservations</code>.
      */
     public static final Reservations RESERVATIONS = Reservations.RESERVATIONS;
@@ -24,6 +43,11 @@ public class Tables {
      * The table <code>diplomski.room</code>.
      */
     public static final Room ROOM = Room.ROOM;
+
+    /**
+     * The table <code>diplomski.term</code>.
+     */
+    public static final Term TERM = Term.TERM;
 
     /**
      * The table <code>diplomski.user</code>.

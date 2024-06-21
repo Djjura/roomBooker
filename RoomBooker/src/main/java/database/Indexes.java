@@ -4,6 +4,7 @@
 package database;
 
 
+import database.tables.ExamTerm;
 import database.tables.Reservations;
 
 import org.jooq.Index;
@@ -22,7 +23,9 @@ public class Indexes {
     // INDEX definitions
     // -------------------------------------------------------------------------
 
+    public static final Index EXAM_TERM_EXAM_FK_IDX = Internal.createIndex(DSL.name("exam_fk_idx"), ExamTerm.EXAM_TERM, new OrderField[] { ExamTerm.EXAM_TERM.EXAM_ID }, false);
     public static final Index RESERVATIONS_ROOMFK_IDX = Internal.createIndex(DSL.name("roomfk_idx"), Reservations.RESERVATIONS, new OrderField[] { Reservations.RESERVATIONS.ROOM_UUID }, false);
     public static final Index RESERVATIONS_START_AND_STATUS = Internal.createIndex(DSL.name("start_and_status"), Reservations.RESERVATIONS, new OrderField[] { Reservations.RESERVATIONS.START_TIME, Reservations.RESERVATIONS.STATUS }, false);
+    public static final Index EXAM_TERM_TERM_FK_IDX = Internal.createIndex(DSL.name("term_fk_idx"), ExamTerm.EXAM_TERM, new OrderField[] { ExamTerm.EXAM_TERM.TERM_ID }, false);
     public static final Index RESERVATIONS_USERFK_IDX = Internal.createIndex(DSL.name("userfk_idx"), Reservations.RESERVATIONS, new OrderField[] { Reservations.RESERVATIONS.USER_UUID }, false);
 }
