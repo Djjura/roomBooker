@@ -18,4 +18,8 @@ public interface ITermQuery {
     void insertExam(ExamTerm examTerm);
 
     List<ExamTermEventWrapper> getExamsForTerm(Term value);
+
+    List<Exam> getTermExams(String termUuid);
+
+    void updateExemsInTerm(List<ExamTermEventWrapper> examsForTerm);
 }

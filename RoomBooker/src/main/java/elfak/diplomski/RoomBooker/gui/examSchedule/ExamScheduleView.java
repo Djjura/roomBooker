@@ -42,7 +42,9 @@ public class ExamScheduleView extends VerticalLayout {
         this.termQuery = termQuery;
         configureCalendar();
         configureTerm();
-        HorizontalLayout layout = new HorizontalLayout(createTermBtn, terms);
+        configureExamButton();
+        HorizontalLayout layout = new HorizontalLayout(createTermBtn, terms, addExamBtn);
+        setSizeFull();
         add(layout, calendar);
     }
 
@@ -76,22 +78,38 @@ public class ExamScheduleView extends VerticalLayout {
         calendar.setBusinessHours(new BusinessHours(LocalTime.of(9, 0), LocalTime.of(20, 0), BusinessHours.DEFAULT_BUSINESS_WEEK));
         calendar.setSizeFull();
         calendar.setTimeslotsSelectable(true);
-        calendar.changeView(CalendarViewImpl.TIME_GRID_WEEK);
+        calendar.changeView(CalendarViewImpl.DAY_GRID_MONTH);
         calendar.setSlotMinTime(LocalTime.of(7, 0));
         calendar.setSlotMaxTime(LocalTime.of(17, 0));
         calendar.getEntryProvider().asInMemory().addEntries(getInitialEntries());
 
+        terms.addValueChangeListener(event -> {
+            setNewCalendarEntires(event.getValue());
+        });
+
+    }
+
+
+    private void setNewCalendarEntires(Term term) {
+        calendar.getEntryProvider().asInMemory().removeAllEntries();
+        calendar.getEntryProvider().asInMemory().addEntries(getInitialEntries());
+        calendar.getEntryProvider().refreshAll();
     }
 
     private Iterable<Entry> getInitialEntries() {
-        List<ExamTermEventWrapper> exams = termQuery.getExamsForTerm(terms.getValue());
-
-
+        Term term = terms.getValue();
         List<Entry> entries = new ArrayList<>();
+        if (term == null) {
+            return entries;
+        }
+        List<ExamTermEventWrapper> exams = termQuery.getExamsForTerm(term);
+
+
         exams.forEach(element -> {
             Entry entry = new Entry(element.getExamTerm().getUuid());
             entry.setTitle(element.getExamName());
             entry.setDisplayMode(DisplayMode.BLOCK);
+            entry.setAllDay(true);
             entry.setStart(element.getExamTerm().getDate());
             entry.setEnd(element.getExamTerm().getDate());
             entries.add(entry);

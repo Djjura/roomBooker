@@ -1,0 +1,13 @@
+
+^
+java:S4973F"<Strings and Boxed types should be compared using "equals()".(ú“Ãğøÿÿÿÿ8‡‘ñ¶„2
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8´˜ñ¶„2
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(Í›âú8º˜ñ¶„2
+o
+java:S6204("RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(œçÖß8Á˜ñ¶„2
+u
+java:S1602&"SRemove useless curly braces around statement and then remove useless return keyword(ó³Øºùÿÿÿÿ8Â˜ñ¶„2
+D
+java:S1125@"'Remove the unnecessary boolean literal.(ÂÏè…8É˜ñ¶„2

@@ -1,0 +1,16 @@
+
+_
+java:S6813&"BRemove this field injection and use constructor injection instead.(êæÄŞ8·õÕ…2
+M
+java:S1948'"+Make "termQuery" transient or serializable.(İ´Óışÿÿÿÿ8¹õÕ…2
+I
+java:S16024",Remove useless curly braces around statement(˜‚ÆÜ8¾õÕ…2
+W
+java:S16129":Replace this lambda with method reference 'Term::getName'.(ÒµÎ˜8¿õÕ…2
+X	java:S125F"<This block of commented-out lines of code should be removed.(²¸Üò8ÃõÕ…2
+N
+java:S1602V",Remove useless curly braces around statement(ï‰çùÿÿÿÿ8ÅõÕ…2
+M
+java:S1172]"+Remove this unused method parameter "term".(»Å«‹úÿÿÿÿ8ÆõÕ…2
+H
+java:S1068"+Remove this unused "toolbar" private field.(¡ˆ‘Ø8ÌõÕ…2

@@ -1,0 +1,11 @@
+
+M
+java:S1948"+Make "termQuery" transient or serializable.(Ý´Óýþÿÿÿÿ8´Éæýƒ2
+X
+java:S1948"6Make "examSchedulerService" transient or serializable.(ÔŽ°šøÿÿÿÿ8¼ºŸ‡„2
+\
+java:S16123":Replace this lambda with method reference 'Term::getName'.(ˆ‹ûðùÿÿÿÿ8ºÉæýƒ2
+\
+java:S16126":Replace this lambda with method reference 'Exam::getName'.(é¸åÞÿÿÿÿÿ8»Éæýƒ2
+N
+java:S1602C",Remove useless curly braces around statement(À­¯òýÿÿÿÿ8½Éæýƒ2
